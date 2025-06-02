@@ -1,0 +1,31 @@
+{
+  "cli": {
+    "version": ">= 16.7.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+      "autoIncrement": true
+    }
+  },
+  "submit": {
+    "production": {}
+  },
+  "expo" : {
+    "name": "Habio",
+    "owner": "pranav0611",
+    "splash": {
+      "image": "./assets/images/habio_logo.png",
+      "resizeMode": "contain",  
+      "backgroundColor": "#ffffff"
+    }
+
+  }
+}

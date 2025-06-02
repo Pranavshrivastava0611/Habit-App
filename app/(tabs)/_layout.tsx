@@ -1,5 +1,6 @@
 import React from "react";
 import { Tabs } from "expo-router";
+import {Image} from "react-native"
 //@ts-ignore
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -20,13 +21,19 @@ export default function RootLayout() {
         },
         tabBarActiveTintColor: "#6200ee",
         tabBarInactiveTintColor: "#666666",
-        headerShown : true
+        headerShown : true,
+        headerTitle: () => (
+          <Image
+            source={require("../../assets/images/habio_logo.png")} // Adjust path if needed
+            style={{ width: 120, height: 40, resizeMode: "contain" }}
+          />
+        ),
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Today's Habit",
+          title: "",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="calendar-today"
@@ -39,7 +46,6 @@ export default function RootLayout() {
       <Tabs.Screen
         name="streaks"
         options={{
-          title: "Streaks",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="chart-line"
@@ -52,7 +58,7 @@ export default function RootLayout() {
       <Tabs.Screen
         name="add-habit"
         options={{
-          title: "Add Habit",
+          title: "",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="plus-circle"
